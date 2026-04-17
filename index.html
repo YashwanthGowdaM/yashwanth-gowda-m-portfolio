@@ -1830,14 +1830,16 @@
 
         // Resume Download Function
         function downloadResume() {
-            const resumeUrl = 'https://vmxwaindxywdjzfdewnh.supabase.co/storage/v1/object/public/resumes/Yashwanth%20Gowda%20M.pdf';}
-            // const resumeUrl = 'c';
+            // TODO: Replace with your Supabase Storage URL
+            // Format: https://[your-project-ref].supabase.co/storage/v1/object/public/[bucket-name]/resume.pdf
+            const resumeUrl = 'https://vmxwaindxywdjzfdewnh.supabase.co/storage/v1/object/public/resumes/Yashwanth%20Gowda%20M.pdf';
             
             // Create a temporary anchor element to trigger download
             const link = document.createElement('a');
             link.href = resumeUrl;
             link.download = 'Yashwanth_Gowda_M_Resume.pdf';
             link.target = '_blank';
+            link.rel = 'noopener noreferrer'; // Security best practice
             
             // Append to body, click, and remove
             document.body.appendChild(link);
